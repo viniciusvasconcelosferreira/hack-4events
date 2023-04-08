@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { db } from '../../services/firebase';
+import { doc, setDoc } from 'firebase/firestore';
+
 
 function CreateCommunity() {
 
@@ -10,13 +12,11 @@ function CreateCommunity() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    db.collection('comunidade').add({
-      afinidades: afinidades,
-      ideologias: ideologias,
-      experiencias: experiencias,
-      social: social,
-    })
+    
+    const communityRef = doc(db, "community", "aaWUpkKwir11T06fAQUi");
+    setDoc(communityRef, {
+                    social: social,
+                })   
     .then(() => {
       alert('Interesses adicionados')
       

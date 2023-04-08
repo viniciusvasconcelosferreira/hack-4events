@@ -1,5 +1,6 @@
 import firebase from "firebase/compat";
-import { Firestore } from "firebase/firestore";
+import { getFirestore } from "firebase/firestore";
+
 
 
 
@@ -13,7 +14,7 @@ firebase.initializeApp({
     appId: process.env.REACT_APP_ID
   });
   
-  const db = new Firestore();
+  const db = new getFirestore();
   
   export { db };
 

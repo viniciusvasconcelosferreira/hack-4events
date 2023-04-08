@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { db } from '../../service/firebase';
 
 function CreateCommunity() {
 
@@ -6,35 +7,55 @@ function CreateCommunity() {
   const [experiencias, setExperiencias] = useState('');
   const [social, setSocial] = useState('');
   const [afinidades, setAfinidades] = useState('');
-  const [geografico, setGeograficos] = useState('');
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-    // insira o código de inserção de dados aqui
+    db.collection('comunidade').add({
+      afinidades: afinidades,
+      ideologias: ideologias,
+      experiencias: experiencias,
+      social: social,
+    })
+    .then(() => {
+      alert('Interesses adicionados')
+    })
+    .catch((error) => {
+      alert(error.message)
+    })
   };
 
   return (
     <section><h1>Selecione seus interesses de acordo com o tema</h1>
-    <form onSubmit={handleSubmit}>
+
+        <form onSubmit={handleSubmit}>
       <label>
         Ideologias:
-        <input type="text" value={ideologias} onChange={(event) => setIdeologias(event.target.value)} />
+        <input 
+          
+          value={ideologias}
+          onChange={(e) => setIdeologias(e.target.value)} />
       </label>
+      <br></br>
       <label>
         Experiencias:
-        <input type="text" value={experiencias} onChange={(event) => setExperiencias(event.target.value)} />
+        <input 
+         value={experiencias} onChange={(e) => setExperiencias(e.target.value)} />
       </label>
+      <br></br>
       <label>
         Social:
-        <input type="select" value={social} onChange={(event) => setSocial(event.target.value)} />
+        <input value={social} onChange={(e) => setSocial(e.target.value)} />
       </label>
+      <br></br>
       <label>
         Afinidades:
-        <input type="select" value={afinidades} onChange={(event) => setAfinidades(event.target.value)} />
+        <input value={afinidades} onChange={(e) => setAfinidades(e.target.value)} />
       </label>
+      <br></br>
       <button type="submit">Enviar</button>
     </form>
+    
     </section>
   );
 }

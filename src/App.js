@@ -1,7 +1,10 @@
 import React from 'react';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Login from "./pages/login";
-import Register from "./pages/register";
+import Login from "./pages/Login/login";
+import Register from "./pages/Register/register";
+import moment from "moment";
+
+moment.locale('pt-br');
 
 function App() {
     return (

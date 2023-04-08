@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from "react";
-import {Input} from "@mui/joy";
-import {Checkbox, FormGroup} from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
-import CircleIcon from '@mui/icons-material/Circle';
+import {Input} from "@mui/joy";
+import Box from '@mui/joy/Box';
+import Checkbox from '@mui/joy/Checkbox';
+import List from '@mui/joy/List';
+import ListItem from '@mui/joy/ListItem';
 import './styles.css';
 
 import {collection, getDocs} from "firebase/firestore";
@@ -16,7 +17,7 @@ export default function Interests() {
     useEffect(() => {
         const fetchInterests = async () => {
             const querySnapshot = await getDocs(collection(db, 'comunidade'));
-            const newInterests = querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+            const newInterests = querySnapshot.docs.map((doc) => ({...doc.data(), id: doc.id}));
             setComunidade(newInterests);
             console.log(comunidade, newInterests);
         };
@@ -38,17 +39,34 @@ export default function Interests() {
                 />
             </div>
             <div className={`interests__container--body`}>
-                {new Array(50).fill(0).map((item, index) => (
-                    <FormGroup key={item}>
-                        <Checkbox
-                            variant="soft"
-                            color="secondary"
-                            icon={<RadioButtonUncheckedIcon color={`secondary`}/>}
-                            checkedIcon={<CircleIcon/>}
-                            sx={{'& .MuiSvgIcon-root': {fontSize: 200}}}
-                        />
-                    </FormGroup>
-                ))}
+                <Box role="group" aria-labelledby="topping">
+                    <List
+                        orientation="horizontal"
+                        wrap
+                        sx={{
+                            '--List-gap': '8px',
+                            '--ListItem-radius': '50px',
+                        }}
+                    >
+                        {[
+                            'Pepperoni',
+                            'Cheese',
+                            'Olives',
+                            'Tomatoes',
+                            'Fried Bacon',
+                            'Spinach',
+                        ].map((item, index) => (
+                            <ListItem key={item}>
+                                <Checkbox
+                                    overlay
+                                    disableIcon
+                                    variant="soft"
+                                    label={item}
+                                />
+                            </ListItem>
+                        ))}
+                    </List>
+                </Box>
             </div>
         </section>
     );

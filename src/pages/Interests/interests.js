@@ -1,6 +1,9 @@
 import React from "react";
 import {Input} from "@mui/joy";
+import {Checkbox, FormGroup} from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
+import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
+import CircleIcon from '@mui/icons-material/Circle';
 import './styles.css';
 
 export default function Interests() {
@@ -20,7 +23,15 @@ export default function Interests() {
             </div>
             <div className={`interests__container--body`}>
                 {new Array(50).fill(0).map((item, index) => (
-                    <div key={crypto.randomUUID()} className={`circle`}></div>
+                    <FormGroup key={item}>
+                        <Checkbox
+                            variant="soft"
+                            color="secondary"
+                            icon={<RadioButtonUncheckedIcon color={`secondary`}/>}
+                            checkedIcon={<CircleIcon/>}
+                            sx={{'& .MuiSvgIcon-root': {fontSize: 200}}}
+                        />
+                    </FormGroup>
                 ))}
             </div>
         </section>

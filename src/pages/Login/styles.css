@@ -3,19 +3,13 @@
     flex-direction: column;
 }
 
-.login__container--header {
-}
-
-.login__container--header > svg:nth-child(1) {
-    position: absolute;
-}
-
 .login__container--body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: -10px;
+    position: relative;
 }
 
 .login__container--body__sign-in {
@@ -25,10 +19,6 @@
     justify-content: center;
     text-align: left;
     width: 25%;
-}
-
-.login__container--body__sign-in--logo {
-
 }
 
 .login__container--body__sign-in--logo > img:nth-child(1) {
@@ -58,33 +48,28 @@
     width: 100%;
 }
 
-.login__container--body__sign-in--email {
-
-}
-
-.login__container--body__sign-in--password {
-
-}
-
-.login__container--body__sign-in--button {
-
-}
-
 .login__container--body__sign-up {
     text-align: left;
     display: flex;
     flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+    align-items: flex-start;
+    width: 25%;
+    margin-top: 20px;
 }
 
 .login__container--body__sign-up--title {
     font-weight: 300;
-    color: #000;
+    color: rgba(0, 0, 0, 0.64);
 }
 
 .login__container--body__sign-up--button {
-
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
 }
 
 .login__container--footer {
-
+    margin-top: -60px;
 }

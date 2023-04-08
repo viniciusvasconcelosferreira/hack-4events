@@ -23,7 +23,6 @@
     align-items: flex-start;
     justify-content: center;
     text-align: left;
-    border: 1px solid red;
 }
 
 .login__container--body__sign-in--logo {

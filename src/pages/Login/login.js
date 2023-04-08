@@ -1,16 +1,16 @@
 import React from 'react';
 import './styles.css';
 import logo from '../../assets/images/logo-4community.svg';
-import PrimaryWave from "../../components/Waves/primary";
-import SecondaryWave from "../../components/Waves/secondary";
+import waveHeader from '../../assets/images/wave-header.svg';
+import waveFooter from '../../assets/images/wave-footer.svg';
 import {Button, Input} from "@mui/joy";
+import {Link} from "react-router-dom";
 
 export default function Login() {
     return (
         <section className={`login__container`}>
             <div className={`login__container--header`}>
-                <SecondaryWave fill={'#5755a1'}/>
-                <PrimaryWave fill={'#8777b5'}/>
+                <img src={waveHeader} alt=""/>
             </div>
             <div className={`login__container--body`}>
                 <div className={`login__container--body__sign-in`}>
@@ -49,11 +49,12 @@ export default function Login() {
                 </div>
                 <div className={`login__container--body__sign-up`}>
                     <span className={`login__container--body__sign-up--title`}>Ou</span>
-                    <span className={`login__container--body__sign-up--button`}>Crie uma conta grátis</span>
+                    <Link to={'/register'} className={`login__container--body__sign-up--button`}>Crie uma conta
+                        grátis</Link>
                 </div>
             </div>
             <div className={`login__container--footer`}>
-
+                <img src={waveFooter} alt=""/>
             </div>
         </section>
     );

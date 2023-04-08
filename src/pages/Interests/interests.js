@@ -1,13 +1,10 @@
-import React, {useEffect, useState} from "react";
-import {Input} from "@mui/joy";
-import {Checkbox, FormGroup} from '@mui/material';
+import React, { useState, useEffect } from "react";
+import { Input } from "@mui/joy";
 import SearchIcon from '@mui/icons-material/Search';
-import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
-import CircleIcon from '@mui/icons-material/Circle';
 import './styles.css';
 
-import {collection, getDocs} from "firebase/firestore";
-import {db} from '../../services/firebase';
+import { collection, getDocs } from "firebase/firestore";
+import { db } from '../../services/firebase';
 
 
 export default function Interests() {
@@ -32,24 +29,30 @@ export default function Interests() {
             <div className={`interests__container--sub-header`}>
                 <Input
                     className={`interests__container--sub-header__search`}
-                    startDecorator={<SearchIcon/>}
+                    startDecorator={<SearchIcon />}
                     placeholder={`Buscar`}
                     size={"lg"}
                 />
             </div>
-            <div className={`interests__container--body`}>
-                {new Array(50).fill(0).map((item, index) => (
-                    <FormGroup key={item}>
-                        <Checkbox
-                            variant="soft"
-                            color="secondary"
-                            icon={<RadioButtonUncheckedIcon color={`secondary`}/>}
-                            checkedIcon={<CircleIcon/>}
-                            sx={{'& .MuiSvgIcon-root': {fontSize: 200}}}
-                        />
-                    </FormGroup>
+            <div className={`interests__container--body`} style={{ top: '80%', display: 'flex', flexDirection: 'row' }}>
+                {comunidade.map((item, index) => (
+                    <div key={item.id} >
+                        <div className={`circle`}>
+                            <h2>{item.ideologias}</h2>
+                        </div>
+                        <div className={`circle`}>
+                            <h2>{item.experiencias}</h2>
+                        </div>
+                        <div className={`circle`}>
+                            <h2>{item.social}</h2>
+                        </div>
+                        <div className={`circle`}>
+                            <h2>{item.afinidades}</h2>
+                        </div>
+                    </div>
                 ))}
             </div>
         </section>
     );
 }
+

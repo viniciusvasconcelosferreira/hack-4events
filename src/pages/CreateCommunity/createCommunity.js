@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { db } from '../../service/firebase';
+import { db } from '../../services/firebase';
 
 function CreateCommunity() {
 

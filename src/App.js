@@ -4,6 +4,7 @@ import Login from "./pages/Login/login";
 import Register from "./pages/Register/register";
 import CreateCommunity from "./pages/CreateCommunity/createCommunity";
 import moment from "moment";
+import Interests from "./pages/Interests/interests";
 
 moment.locale('pt-br');
 
@@ -13,6 +14,7 @@ function App() {
             <Routes>
                 <Route index path="login" element={<Login/>}/>
                 <Route path="register" element={<Register/>}/>
+                <Route path="select-interests" element={<Interests/>}/>
                 <Route path="createcommunity" element={<CreateCommunity/>}/>
             </Routes>
         </BrowserRouter>

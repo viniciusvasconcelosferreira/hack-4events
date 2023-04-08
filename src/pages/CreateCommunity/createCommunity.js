@@ -19,10 +19,13 @@ function CreateCommunity() {
     })
     .then(() => {
       alert('Interesses adicionados')
+      
     })
     .catch((error) => {
       alert(error.message)
     })
+    
+
   };
 
   return (

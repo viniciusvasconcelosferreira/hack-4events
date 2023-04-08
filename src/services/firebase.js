@@ -1,7 +1,9 @@
 import firebase from "firebase/compat";
 import { Firestore } from "firebase/firestore";
 
-const app = firebase.initializeApp({
+
+
+firebase.initializeApp({
     apiKey: process.env.REACT_API_KEY,
     authDomain: process.env.REACT_AUTH_DOMAIN,
     databaseURL: process.env.REACT_DATABASE_URL,
@@ -11,7 +13,7 @@ const app = firebase.initializeApp({
     appId: process.env.REACT_APP_ID
   });
   
-  const db = Firestore(app);
+  const db = new Firestore();
   
   export { db };
 

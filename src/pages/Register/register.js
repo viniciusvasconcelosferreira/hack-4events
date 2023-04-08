@@ -16,7 +16,7 @@ export default function Register() {
         <div className={`login__container--body__sign-in`}>
           <span className={`login__container--body__sign-in--logo`}><img src={logo}
             alt="Logo da Four Community" /></span>
-          <form>
+          <form >
             <h1>4.community</h1>
             <label>E-mail:</label>
             <br></br>
@@ -38,7 +38,7 @@ export default function Register() {
             <br></br>
             <input name="password" />
             <br></br>
-            <input type="submit" value={SubmitEvent}/>
+            <input type="submit" value={SubmitEvent} />
           </form>
         </div>
       </div>

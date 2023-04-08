@@ -1,77 +1,92 @@
-.login__container {
+.register__container {
     display: flex;
     flex-direction: column;
 }
 
-.login__container--header {
-    
+.register__container--header {
+
 }
 
-.login__container--header > svg:nth-child(1) {
+.register__container--header > img:nth-child(1) {
+    top: -100px;
     position: absolute;
 }
 
-.login__container--body {
+
+.register__container--body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 50px;
+    position: relative;
 }
 
-.login__container--body__sign-in {
+.register__container--body__sign-up {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
     text-align: left;
+    width: 25%;
 }
 
-.login__container--body__sign-in--logo {
-
-}
-
-.login__container--body__sign-in--title {
-    font-size: 24px;
-    font-weight: 900;
-    margin-bottom: 10px;
-    color: #000;
-}
-
-.login__container--body__sign-in--sub-title {
-    font-size: 18px;
-    font-weight: 300;
-    line-height: 20px;
-    margin-bottom: 30px;
-    color: #000;
-}
-
-.login__container--body__sign-in--email {
+.register__container--body__sign-up--logo {
 
 }
 
-.login__container--body__sign-in--password {
-
+.register__container--body__sign-up--logo > img:nth-child(1) {
+    width: 200px;
+    margin-bottom: 15px;
 }
 
-.login__container--body__sign-in--button {
-
-}
-
-.login__container--body__sign-up {
-    text-align: left;
+.register__container--body__sign-up__form {
     display: flex;
     flex-direction: column;
+    gap: 15px;
+    width: 100%;
 }
 
-.login__container--body__sign-up--title {
-    font-weight: 300;
-    color: #000;
-}
-
-.login__container--body__sign-up--button {
+.register__container--body__sign-up--email {
 
 }
 
-.login__container--footer {
+.register__container--body__sign-up--first-name {
 
+}
+
+.register__container--body__sign-up--last-name {
+
+}
+
+.register__container--body__sign-up--born-at {
+}
+
+.register__container--body__sign-up--born-at__selects {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    width: 100%;
+}
+
+div.MuiSelect-root {
+    width: 100%;
+}
+
+.register__container--body__sign-in {
+    margin-top: 7px;
+}
+
+.register__container--body__sign-in > a:nth-child(2) {
+    text-decoration: none;
+    color: #4d2a95;
+    font-weight: 700;
+}
+
+.register__container--footer {
+}
+
+.register__container--footer > img:nth-child(1) {
+    position: absolute;
+    bottom: -100px;
 }

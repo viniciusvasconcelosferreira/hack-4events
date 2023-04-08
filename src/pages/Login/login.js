@@ -1,10 +1,10 @@
 import React from 'react';
-import './styles.css';
 import logo from '../../assets/images/logo-4community.svg';
 import waveHeader from '../../assets/images/wave-header.svg';
 import waveFooter from '../../assets/images/wave-footer.svg';
 import {Button, Input} from "@mui/joy";
 import {Link} from "react-router-dom";
+import './styles.css';
 
 export default function Login() {
     return (

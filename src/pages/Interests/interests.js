@@ -1,6 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { Input } from "@mui/joy";
+import React, { useEffect, useState } from "react";
 import SearchIcon from '@mui/icons-material/Search';
+import { Input } from "@mui/joy";
+import Box from '@mui/joy/Box';
+import Checkbox from '@mui/joy/Checkbox';
+import List from '@mui/joy/List';
+import ListItem from '@mui/joy/ListItem';
 import './styles.css';
 
 import { collection, getDocs } from "firebase/firestore";
@@ -34,23 +38,58 @@ export default function Interests() {
                     size={"lg"}
                 />
             </div>
-            <div className={`interests__container--body`} style={{ top: '80%', display: 'flex', flexDirection: 'row' }}>
-                {comunidade.map((item, index) => (
-                    <div key={item.id} >
-                        <div className={`circle`}>
-                            <h2>{item.ideologias}</h2>
-                        </div>
-                        <div className={`circle`}>
-                            <h2>{item.experiencias}</h2>
-                        </div>
-                        <div className={`circle`}>
-                            <h2>{item.social}</h2>
-                        </div>
-                        <div className={`circle`}>
-                            <h2>{item.afinidades}</h2>
-                        </div>
-                    </div>
-                ))}
+            <div className={`interests__container--body`}>
+                <Box role="group" aria-labelledby="topping">
+                    <List
+                        orientation="horizontal"
+                        wrap
+                        sx={{
+                            '--List-gap': '8px',
+                            '--ListItem-radius': '50px',
+                        }}
+                    >
+                        {comunidade.map((item, index) => (
+                            <ListItem key={item.id}>
+                                <Checkbox
+                                    overlay
+                                    disableIcon
+                                    variant="soft"
+                                    label={item.afinidades}
+                                />
+                            </ListItem>
+                        ))}
+                        {comunidade.map((item, index) => (
+                            <ListItem key={item.id}>
+                                <Checkbox
+                                    overlay
+                                    disableIcon
+                                    variant="soft"
+                                    label={item.ideologias}
+                                />
+                            </ListItem>
+                        ))}
+                        {comunidade.map((item, index) => (
+                            <ListItem key={item.id}>
+                                <Checkbox
+                                    overlay
+                                    disableIcon
+                                    variant="soft"
+                                    label={item.social}
+                                />
+                            </ListItem>
+                        ))}
+                        {comunidade.map((item, index) => (
+                            <ListItem key={item.id}>
+                                <Checkbox
+                                    overlay
+                                    disableIcon
+                                    variant="soft"
+                                    label={item.experiencias}
+                                />
+                            </ListItem>
+                        ))}
+                    </List>
+                </Box>
             </div>
         </section>
     );

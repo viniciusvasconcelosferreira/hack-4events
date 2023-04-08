@@ -3,7 +3,7 @@ import './styles.css';
 import logo from '../../assets/images/logo-4community.svg';
 import PrimaryWave from "../../components/Waves/primary";
 import SecondaryWave from "../../components/Waves/secondary";
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
 
 export default function Login() {
     return (

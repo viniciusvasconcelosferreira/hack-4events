@@ -20,7 +20,7 @@ export default function Interests() {
             </div>
             <div className={`interests__container--body`}>
                 {new Array(50).fill(0).map((item, index) => (
-                    <div className={`circle`}></div>
+                    <div key={crypto.randomUUID()} className={`circle`}></div>
                 ))}
             </div>
         </section>

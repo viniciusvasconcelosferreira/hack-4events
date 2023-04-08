@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Waves({fill}) {
+export default function PrimaryWave({fill}) {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
             <path fill={fill} fill-opacity="1"

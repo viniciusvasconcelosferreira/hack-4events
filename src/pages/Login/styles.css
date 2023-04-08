@@ -4,8 +4,10 @@
 }
 
 .login__container--header {
-    display: flex;
-    flex-direction: column;
+}
+
+.login__container--header > svg:nth-child(1) {
+    position: absolute;
 }
 
 .login__container--body {
@@ -56,7 +58,9 @@
 }
 
 .login__container--body__sign-up {
-
+    text-align: left;
+    display: flex;
+    flex-direction: column;
 }
 
 .login__container--body__sign-up--title {

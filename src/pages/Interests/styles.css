@@ -51,4 +51,15 @@
     padding: 10px;
     background: rgb(87, 85, 161);
     background: radial-gradient(circle, rgba(87, 85, 161, 1) 6%, rgba(135, 119, 181, 1) 70%);
+    text-align: center;
+    position: relative;
+    top: 100%;
+    transform: translateY(80%); 
+    color:antiquewhite;
+    vertical-align: middle;
+    
+}
+
+.h2 {
+    bottom: 50%;
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {Input} from "@mui/joy";
 import {Checkbox, FormGroup} from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
@@ -6,7 +6,23 @@ import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 import CircleIcon from '@mui/icons-material/Circle';
 import './styles.css';
 
+import {collection, getDocs} from "firebase/firestore";
+import {db} from '../../services/firebase';
+
+
 export default function Interests() {
+    const [comunidade, setComunidade] = useState([]);
+
+    useEffect(() => {
+        const fetchInterests = async () => {
+            const querySnapshot = await getDocs(collection(db, 'comunidade'));
+            const newInterests = querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+            setComunidade(newInterests);
+            console.log(comunidade, newInterests);
+        };
+        fetchInterests();
+    }, [comunidade]);
+
     return (
         <section className={`interests__container`}>
             <div className={`interests__container--header`}>

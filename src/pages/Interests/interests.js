@@ -37,7 +37,7 @@ export default function Interests() {
             <div className={`interests__container--body`} style={{ top: '10%', display: 'flex', flexDirection: 'row' }}>
                 {comunidade.map((item, index) => (
                     <div key={item.id} >
-                        <div className={`circle`}>
+                        <div key={crypto.randomUUID()} className={`circle`}>
                             <h2>{item.ideologias}</h2>
                         </div>
                         <div className={`circle`}>

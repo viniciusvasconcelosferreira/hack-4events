@@ -3,7 +3,7 @@ import './styles.css';
 import logo from '../../assets/images/logo-4community.svg';
 import PrimaryWave from "../../components/Waves/primary";
 import SecondaryWave from "../../components/Waves/secondary";
-import {Link} from "react-router-dom";
+import {Button, Input} from "@mui/joy";
 
 export default function Login() {
     return (
@@ -14,16 +14,37 @@ export default function Login() {
             </div>
             <div className={`login__container--body`}>
                 <div className={`login__container--body__sign-in`}>
-                    <span className={`login__container--body__sign-in--logo`}><img src={logo}
-                                                                                   alt="Logo da Four Community"/></span>
+                    <span className={`login__container--body__sign-in--logo`}>
+                        <img
+                            src={logo}
+                            alt="Logo da Four Community"
+                        />
+                    </span>
                     <span className={`login__container--body__sign-in--title`}>Entre com seu email</span>
                     <span className={`login__container--body__sign-in--sub-title`}>Para acessar suas comunidades</span>
-                    <form action="">
-                        <input className={`login__container--body__sign-in--email`} type="email"
-                               placeholder="Digite seu email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$"
-                               title="Endereço de email inválido"/>
-                        <input className={`login__container--body__sign-in--password`} type="password"/>
-                        <button className={`login__container--body__sign-in--button`} type="submit">Entrar</button>
+                    <form className={`login__container--body__form`} action="">
+                        <Input
+                            className={`login__container--body__sign-in--email`}
+                            color="neutral"
+                            size="lg"
+                            variant="outlined"
+                            placeholder="Digite seu email"
+                            type={"email"}
+                        />
+                        <Input
+                            className={`login__container--body__sign-in--password`}
+                            color="neutral"
+                            size="lg"
+                            variant="outlined"
+                            placeholder="Digite sua senha"
+                            type={"password"}
+                        />
+                        <Button
+                            className={`login__container--body__sign-in--button`}
+                            type="submit"
+                            color="success"
+                            variant="soft"
+                        >Entrar</Button>
                     </form>
                 </div>
                 <div className={`login__container--body__sign-up`}>

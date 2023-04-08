@@ -15,6 +15,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: -10px;
 }
 
 .login__container--body__sign-in {
@@ -23,18 +24,23 @@
     align-items: flex-start;
     justify-content: center;
     text-align: left;
-    border: 1px solid red;
+    width: 25%;
 }
 
 .login__container--body__sign-in--logo {
 
 }
 
+.login__container--body__sign-in--logo > img:nth-child(1) {
+    width: 200px;
+    margin-bottom: 50px;
+}
+
 .login__container--body__sign-in--title {
     font-size: 24px;
     font-weight: 900;
     margin-bottom: 10px;
-    color: #000;
+    color: rgba(0, 0, 0, 0.87);
 }
 
 .login__container--body__sign-in--sub-title {
@@ -42,7 +48,14 @@
     font-weight: 300;
     line-height: 20px;
     margin-bottom: 30px;
-    color: #000;
+    color: rgba(0, 0, 0, 0.34);
+}
+
+.login__container--body__form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
 }
 
 .login__container--body__sign-in--email {

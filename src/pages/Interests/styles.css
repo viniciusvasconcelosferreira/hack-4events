@@ -41,6 +41,7 @@
     width: 100%;
     height: 33rem;
     overflow: scroll;
+    padding: 25%;
 }
 
 .circle {

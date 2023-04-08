@@ -12,10 +12,10 @@ function App() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route index path="login" element={<Login/>}/>
+                <Route path="login" element={<Login/>}/>
                 <Route path="register" element={<Register/>}/>
                 <Route path="select-interests" element={<Interests/>}/>
-                <Route path="createcommunity" element={<CreateCommunity/>}/>
+                <Route path="create-community" element={<CreateCommunity/>}/>
             </Routes>
         </BrowserRouter>
     );
